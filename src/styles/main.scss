@@ -1,0 +1,72 @@
+@import "all/all";
+
+$min_desktop_width: 1024px;
+$min_tablet_width: 768px;
+$max_mobile_portrait_width: 480px;
+$max_mobile_landscape_width: 640px;
+
+@mixin respond_large {
+    @media screen and (min-width: $min_desktop_width) { @content }
+}
+
+@mixin respond_medium {
+    @media screen and (min-device-width: $min_tablet_width) and (max-device-width: $min_desktop_width) { @content }
+}
+
+@mixin respond_small_portrait {
+    @media screen and (max-device-width: $max_mobile_portrait_width) and (orientation: portrait)  { @content }
+}
+
+@mixin respond_small_landscape {
+    @media screen and (max-device-width: $max_mobile_landscape_width) and (orientation: landscape) { @content }
+}
+
+@mixin respond_small {
+    @media screen and (max-device-width: $max_mobile_landscape_width) { @content }
+}
+
+$bg-color: #fff;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.venus_header {
+    display:  inline-grid;
+
+    padding: 5px;
+    font-size: 20px;
+    width: 100%;
+    color: black;
+    background: $bg-color;
+    text-align: center;
+    border-bottom: darkgrey solid 0.5px;
+
+    grid-template-columns: 1fr 5fr 0fr 0fr 1fr;
+    grid-template-rows: 64px;
+
+    @include respond_large(){
+        grid-template-rows: 192px;
+        font-size: medium;
+    }
+
+    .venus_logo{
+        object-fit: contain;
+        max-height: 100%;
+    }
+}
+
+.icon{
+    justify-self: center;
+    align-self: center;
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.venus_footer {
+    background: $bg-color;
+    padding: 1em;
+    text-align: center;
+}

@@ -12,17 +12,27 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry: "./src/index.ts",
+  entry: "./src/ts/index.ts",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
   },
   devServer: {
     open: true,
     host: "localhost",
+    https: false,
+    watchFiles: ['./src/'],
+    static: [{
+      directory: path.join(__dirname, '/static'),
+      publicPath: '/public',
+    },
+    {
+      directory: path.join(__dirname, '/node_modules') + '/@flaticon/flaticon-uicons',
+      publicPath: '/flaticon',
+    }],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "./src/index.html",
     }),
 
     // Add your plugins here
@@ -36,8 +46,23 @@ const config = {
         exclude: ["/node_modules/"],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "sass-loader"],
+        test: /\.(scss|css)$/,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          "resolve-url-loader",
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sassOptions:{
+                includePaths: [path.join(__dirname, 'node_modules/@flaticon/flaticon-uicons/css')],
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -50,6 +75,9 @@ const config = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+  },
+  stats: {
+    errorDetails: true,
   },
 };
 

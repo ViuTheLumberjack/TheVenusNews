@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "the-venus-news",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "A news website for the Venusian people. Inspired by 'The Mercury News'",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.1",
     "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
     "prettier": "^2.8.7",
@@ -28,5 +29,10 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1",
     "workbox-webpack-plugin": "^6.5.4"
+  },
+  "dependencies": {
+    "@flaticon/flaticon-uicons": "^2.0.1",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^5.0.0"
   }
 }
