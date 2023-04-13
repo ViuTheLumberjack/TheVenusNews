@@ -24,13 +24,109 @@
                 <i class="fi fi-rr-search icon"></i>
             </div>
         </header>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
-        <button class = "btn btn-primary">Click me</button>
+        <div class = "venus_content">
+            <section class = "breaking_news">
+                <h1> BREAKING NEWS </h1>
+                <a href = "#">
+                    <p id = "breaking_content"> 10000 people have been killed in the last 24 hours in the war between the Martians and the Venusians. </p>
+                </a>
+                <i class="fi fi-rr-cross"></i>
+            </section>
+            <section id = "venus_relevant_focus">
+                <article class = "main_article">
+                    <h3 class = "title">
+                        <a class = "title_text" href = "#">
+                            The Never-Ending War
+                        </a>
+                    </h3>
+                    <img src = "https://via.placeholder.com/600x400" alt = "">
+                    <p class = "description">
+                        The Venusians have been fighting the Martians for 100 years.
+                        The war has been going on for so long that the Martians have forgotten why they started the war in the first place.
+                    </p>
+                        <ul title = "Related" class = "related_section">
+                            <li class = "related_article">
+                                <div>
+                                    <a href = "#">
+                                        <span>
+                                            The wrath sing, goddess, of Peleus' son, Achilles    
+                                        </span>
+                                    </a>
+                                    <time id = "related_time">
+                                        3 hours ago
+                                    </time>
+                                </div>
+                            </li>
+                            <li class = "related_article">
+                                <div>
+                                    <a href = "#">
+                                        <span>
+                                            The wrath sing, goddess, of Peleus' son, Achilles    
+                                        </span>
+                                    </a>
+                                    <time id = "related_time">
+                                        12 hours ago
+                                    </time>
+                                </div>
+                            </li>
+                        </ul>
+                    
+                </article>
+                <div id = "venus_relevant_secondary">
+                    <ul class = "relevant_preview">
+                        <li>
+                            <article>
+                                <a href = "#" class = "img_preview">
+                                    <img src = "https://via.placeholder.com/300x200" alt = "">
+                                </a>
+                                <div class = "subscriber_only_badge">
+                                    <span>SUBSCRIBER ONLY</span>
+                                </div>
+                                <h3 class = "title">
+                                    <a class = "title_text" href = "#">
+                                        Famous Idol Murdered in her Apartment. Only witnesser a mysterious 3 years old baby
+                                    </a>
+                                </h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <a href = "#" class = "img_preview">
+                                    <img src = "https://via.placeholder.com/300x200" alt = "">
+                                </a>
+                                <h3 class = "title">
+                                    <a class = "title_text" href = "#">
+                                        What is the meaning of life?
+                                    </a>
+                                </h3>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class = "venus_headlines">
+
+            </section>
+            <section class = "venus_newsletter">
+
+            </section>
+            <section class = "venus_popular">
+
+            </section>
+            <section class = "venus_thematic">
+
+            </section>
+            <section class = "milky_way_relevant">
+
+            </section>
+            <section class = "cookies">
+
+            </section>
+        </div>
         <footer id = "site_footer">
             <div class = "venus_footer">
                 <img src="/public/img/The_Venus_News_logo.png" alt="Venus Logo" class="venus_logo">
-                <ul>
+                <ul class = "site_sections">
                     <li>
                         <a href="#">NEWS ALERTS</a>
                         <i class="fi fi-rr-angle-small-down"></i>
@@ -54,33 +150,42 @@
                     <li>
                         <a>FOLLOW US</a>
                     </li>
-                    <li class = "no_border_top icon_buttons">
+                    <li id = "icon_buttons" class = "no_border_top">
                         <i class="fi fi-brands-facebook"></i>
                         <i class="fi fi-brands-twitter"></i>
                         <i class="fi fi-brands-instagram"></i>
-                        <i class="fi fi-sr-rss"></i>
                     </li>
                     <li id = "venus_button_container" class = "no_border_top">
                         <a href="#" id="subscribe_button" class = "venus_button">SUBSCRIBE NOW</a>
                     </li>
                 </ul>
-                <p>© 2023 The Venus News</p>
+                <ul class = "venus_legal">
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="#">Tasty Cookies</a>
+                    </li>
+                    <li>
+                        <a href="#">Venus Notice of Collection</a>
+                    </li>
+                    <li>
+                        <a href="#">Notice of Financial Incentive</a>
+                    </li>
+                    <li>
+                        <a href="#">Do not Sell/Share My Personal Information to Martians</a>
+                    </li>
+                    <li>
+                        <a href="#">Arbitration</a>
+                    </li>
+                    <li>
+                        <p> Powered by HTML, SCSS & Typescript. Reject Wordpress! </p>
+                    </li>
+                    <li>
+                        <p>2023 TheVenusNews Foundation</p>
+                    </li>
+                </ul>
             </div>
         </footer>
     </body>
-
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("service-worker.js")
-                    .then((registration) => {
-                        console.log("Service Worker registered: ", registration);
-                    })
-                    .catch((registrationError) => {
-                        console.error("Service Worker registration failed: ", registrationError);
-                    });
-            });
-        }
-    </script>
 </html>
