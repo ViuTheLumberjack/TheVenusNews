@@ -1,6 +1,6 @@
 @import "all/all";
 
-$min_desktop_width: 1024px;
+$min_desktop_width: 1125px;
 $min_tablet_width: 768px;
 $max_mobile_portrait_width: 480px;
 $max_mobile_landscape_width: 640px;
@@ -8,6 +8,7 @@ $max_mobile_landscape_width: 640px;
 $primary: #007ab8;
 $primary-darker: #006394;
 $section-title: #5d5b5a;
+$not-relevant: rgb(56, 50, 42);
 $bg-color: #ffffff;
 $cute-bg: rgb(241, 239, 235);
 $icon-hover-color: #00a9ff;
@@ -15,23 +16,23 @@ $border-color: rgb(215, 214, 210);
 
 @mixin respond_large {
     @media screen and (min-width: $min_desktop_width) { @content }
-}
+};
 
 @mixin respond_medium {
     @media screen and (min-device-width: $min_tablet_width) and (max-device-width: $min_desktop_width) { @content }
-}
+};
 
 @mixin respond_small_portrait {
     @media screen and (max-device-width: $max_mobile_portrait_width) and (orientation: portrait)  { @content }
-}
+};
 
 @mixin respond_small_landscape {
     @media screen and (max-device-width: $max_mobile_landscape_width) and (orientation: landscape) { @content }
-}
+};
 
 @mixin respond_small {
     @media screen and (max-device-width: $max_mobile_landscape_width) { @content }
-}
+};
 
 @mixin link-hover{
     :link {
@@ -54,7 +55,7 @@ $border-color: rgb(215, 214, 210);
         color: $primary_darker;
         text-decoration: none;
     }
-}
+};
 
 @mixin title ($font-size){
     grid-area: title;
@@ -66,7 +67,7 @@ $border-color: rgb(215, 214, 210);
 
     @include link-hover();
     
-}
+};
 
 @mixin subscriber-badge(){
     .subscriber_only_badge{
@@ -87,7 +88,7 @@ $border-color: rgb(215, 214, 210);
             text-align: center;
         }
     }
-}
+};
 
 
 * {
@@ -96,24 +97,167 @@ $border-color: rgb(215, 214, 210);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.venus_header {
-    display:  inline-grid;
+.venus_header{
+    display: grid;
+    position: fixed;
+    top: 0;
 
-    font-size: 20px;
+    z-index: 1;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    
+    font-size: 16px;
     width: 100%;
     color: black;
     background: $bg-color;
     text-align: center;
     border-bottom: darkgrey solid 0.5px;
-
-    grid-template-columns: 1fr 5fr 0fr 0fr 1fr;
     grid-template-rows: 64px;
 
     @include respond_large(){
-        grid-template-rows: 192px;
+        grid-template-rows: 144px 48px;
         font-size: medium;
     }
+    
+    .always_on_header{
+        display: grid;
+        padding: 0px 20px;
+        grid-template-columns: 0.2fr 0.3fr 1fr 0.4fr 0.1fr;
+        
+        .nav_link{
+            display: block;
+            place-self: center;
+    
+            div{
+                display: grid;
+                grid-template-columns: 1fr 9fr;
+                grid-template-rows: 20px;
+    
+                @include respond_large(){
+                    grid-template-rows: 1fr;
+                }
+    
+                span{
+                    display: none;
+    
+                    @include respond_large(){
+                        display: block;
+                        font-weight: bold;
+                        
+                        padding: 0.5em 0.5em;
+                        color: black;
+                    }
+                }
+            }
+    
+        }
+    
+        .venus_logo{
+            max-height: 64px;
+    
+            @include respond_large(){
+                max-height: 100%;
+            }
+        }
+    
+        .venus_meteo{
+            display: block;
+            place-self: center;
+            font-weight: bold;
+            font-size: 1em;
+    
+            div{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+    
+                @include respond_large(){
+                    grid-template-rows: 1fr;
+                }
+    
+                span{
+                    text-align: right;
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+    
+                i{
+                    text-align: left;
+                    padding-left: 5px;
+                    grid-area: 1 / 2 / 2 / 3;
+                }
+    
+                time{
+                    display: none;
+                    grid-area: 2 / 1 / 3 / 3;
+    
+                    @include respond_large(){
+                        display: block;
+                    }
+                }
+            }
+        }
+    
+        .user_btns{
+            display: contents;
+            
+            .user_mobile{
+                display: block;
+                place-self: center;
+    
+                @include respond_large(){
+                    display: none;
+                }
+            }
+    
+            .user_desktop{
+                display: none;
+    
+                @include respond_large(){
+                    display: block;
+                    place-self: center;
+                }
+            }
+        }
+    }
 }
+    
+
+.navigation_index{
+    display: none;
+
+    @include respond_large(){
+        display: block;
+        font-weight: bold;
+        place-content: center;
+        justify-content: center;
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            place-content: center;
+
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            li {
+                display: inline-block;
+
+                a {
+                    display: block;
+                    color: black;
+                    text-align: center;
+                    padding: 16px;
+                    text-decoration: none;
+
+                    @include link-hover();
+                }
+            }
+        }
+
+    }
+}
+
 
 .venus_logo{
     align-self: center;
@@ -124,10 +268,38 @@ $border-color: rgb(215, 214, 210);
 }
 
 .icon{
-    justify-self: center;
-    align-self: center;
-    max-width: 16px;
-    max-height: 16px;
+    place-self: center;
+
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.venus_button{
+    color: white;
+    background-color: $primary;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    border: none;
+
+    &:hover{
+        background-color: $icon-hover-color;
+        color: white;
+    }
+
+    &:visited{
+        background-color: $primary;
+        color: white;
+    }
+
+    &:hover:visited{
+        background-color: $icon-hover-color;
+        color: white;
+    }
 }
 
 #venus_button_container{
@@ -270,7 +442,62 @@ $border-color: rgb(215, 214, 210);
 }
 
 .venus_content{
-    padding: 0.5em;
+    position: relative;
+    top: 64px;
+    padding: 0 0.5em;
+    max-width: 80em;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    @include respond_large(){
+        top: 192px;
+        margin-bottom: 200px;
+    }
+
+    .venus_trending{
+        display: none;
+
+        @include respond_large(){
+            display: grid;
+            font-size: 14px;
+            grid-template-columns: 1fr 9fr;
+            grid-template-rows: 35px;
+            place-content: center;
+            justify-content: center;
+            line-height: 35px;
+
+            span{
+                padding-left: 0.5em;
+                font-weight: bold;
+                color: $primary;
+            }
+
+            ul{
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                place-content: center;
+
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+    
+                li {
+                    display: inline-block;
+                    padding-right: 1.5625em;
+    
+                    a {
+                        display: block;
+                        color: $not-relevant;
+                        text-align: center;
+                        text-decoration: none;
+    
+                        @include link-hover();
+                    }
+                }
+            }
+        }
+    }
 
     .breaking_news{
         background-color: #ffc518;
@@ -294,10 +521,16 @@ $border-color: rgb(215, 214, 210);
             color: black;
             text-decoration: none;
 
-            &:link:hover:visited:active {
+            &:hover{
                 color: black;
-                text-decoration: none;
+                text-decoration: underline;
             }
+
+            &:hover:visited{
+                color: black;
+                text-decoration: underline;
+            }
+            
         }
 
         i{
@@ -446,32 +679,6 @@ $border-color: rgb(215, 214, 210);
             color: black;
             font-weight: bold;
             justify-self: center;
-        }
-
-        a{
-            color: white;
-            background-color: $primary;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 1.1em;
-            padding: 0.5em 1em;
-
-            &:hover{
-                background-color: $icon-hover-color;
-                color: white;
-            }
-
-            &:visited{
-                background-color: $primary;
-                color: white;
-            }
-
-            &:hover:visited{
-                background-color: $icon-hover-color;
-                color: white;
-            }
         }
     }
 
