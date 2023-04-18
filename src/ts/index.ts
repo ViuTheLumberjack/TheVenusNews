@@ -14,6 +14,4 @@ function adjustHeader(){
         document.getElementById("site_header").classList.remove("not_top");
         document.getElementById("site_header").classList.add("large");
       }
-      
-      console.log("ok");
 }
