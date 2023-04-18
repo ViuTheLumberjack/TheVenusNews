@@ -48,7 +48,7 @@
                     </div>
                     <i class="fi fi-rr-search icon"></i>
                 </div>
-                <div class = "navigation_index">
+                <div id = "navbar" class = "navigation_index">
                     <nav>
                         <a href = "#">
                             <span>News</span>
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </header>
-        <div class = "venus_content">
+        <div id = "page" class = "venus_content">
             <section id = "trending" class = "venus_trending">
                 <span>
                     TRENDING: 
@@ -113,12 +113,12 @@
                     </li>
                 </ul>
             </section>
-            <section class = "breaking_news">
+            <section id = "breaking_news" class = "breaking_news">
                 <h1> BREAKING NEWS </h1>
                 <a href = "#">
                     <p id = "breaking_content"> 10000 people have been killed in the last 24 hours in the war between the Martians and the Venusians. </p>
                 </a>
-                <i class="fi fi-rr-cross"></i>
+                <i id = "close_breaking" class="fi fi-rr-cross"></i>
             </section>
             <div class = "two-to-one">
                 <section id = "venus_relevant_focus" class = "column-1">
@@ -346,11 +346,11 @@
                 <section class = "venus_thematic vertical" id = "venus_crime" title = "CRIME AND PUBLIC SAFETY">
                     <article id = "relevant">
                         <img src = "https://via.placeholder.com/450x250" alt = "">
-                        <h4 id = "title" class = "title">
+                        <h2 id = "title" class = "title">
                             <a class = "title_text" href = "#">
                                 Wanted: Martian Manhunt
                             </a>
-                        </h4>
+                        </h2>
                         <p id = "description">
                             The Venus government is offering a reward of 1 million Venusian pesos for the capture of the Martian criminal known as "The Martian Manhunt".
                         </p>
@@ -388,11 +388,11 @@
                 <section class = "venus_thematic vertical" id = "venus_sports" title = "SPORTS">
                     <article id = "relevant">
                         <img src = "https://via.placeholder.com/450x250" alt = "">
-                        <h4 id = "title" class = "title">
+                        <h2 id = "title" class = "title">
                             <a class = "title_text" href = "#">
                                 Venusian Football League is back!
                             </a>
-                        </h4>
+                        </h2>
                         <p id = "description">
                             The Venusian Football League is back after a 2 year hiatus. The first game will be played tomorrow!
                         </p>
@@ -430,11 +430,11 @@
                 <section class = "venus_thematic vertical" id = "venus_to_do" title = "TO DO">
                     <article id = "relevant">
                         <img src = "https://via.placeholder.com/450x250" alt = "">
-                        <h4 id = "title" class = "title">
+                        <h2 id = "title" class = "title">
                             <a class = "title_text" href = "#">
                                 The Venusian Museum of Art is opening a new exhibition
                             </a>
-                        </h4>
+                        </h2>
                         <p id = "description">
                             The Venusian Museum of Art is opening a new exhibition of the works of the Venusian artist, Van Gaussen
                         </p>
@@ -474,11 +474,11 @@
                 <section class = "venus_thematic horizontal" id = "venus_weather" title = "WEATHER">
                     <article id = "relevant">
                         <img src = "https://via.placeholder.com/450x250" alt = "">
-                        <h4 id = "title" class = "title">
+                        <h2 id = "title" class = "title">
                             <a class = "title_text" href = "#">
                                 Venusian weather forecast
                             </a>
-                        </h4>
+                        </h2>
                         <p id = "description">
                             The weather in Venus is expected to be sunny and warm for the next 3 days. The temperature will be around 30 degrees Celsius.
                         </p>
@@ -516,11 +516,11 @@
                 <section class = "venus_thematic horizontal" id = "venus_opinion" title = "OPINION">
                     <article id = "relevant">
                         <img src = "https://via.placeholder.com/450x250" alt = "">
-                        <h4 id = "title" class = "title">
+                        <h2 id = "title" class = "title">
                             <a class = "title_text" href = "#">
                                 Venusian government should invest more in the space program
                             </a>
-                        </h4>
+                        </h2>
                         <p id = "description">
                             The Venusian government should invest more in the space program. We need to explore the universe and find new planets to colonize.
                             This is the only way we can win the war against Martians.
@@ -608,44 +608,136 @@
             </section>
             <div id = "cookies">
                 <i class="fi fi-rr-cookie"></i>
+                <div id = cookie_policy class = "show_left hidden">
+                    <p>
+                        We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+                    </p>
+                    <button class = "venus_button">
+                        OK
+                    </button>
+                </div>
             </div>
         </div>
         <footer id = "site_footer">
             <div class = "venus_footer">
                 <img src="public/img/The_Venus_News_logo.png" alt="Venus Logo" class="venus_logo">
-                <ul class = "site_sections">
-                    <li>
+                <nav class = "site_sections">
+                    <div>
                         <a href="#">NEWS ALERTS</a>
                         <i class="fi fi-rr-angle-small-down"></i>
-                    </li>
-                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">Email Newsletters</a>
+                            </li>
+                            <li>
+                                <a href="#">Today's e-Edition</a>
+                            </li>
+                            <li>
+                                <a href="#">Mobile Apps</a>
+                            </li>
+                            <li>
+                                <a href="#">Site Map</a>
+                            </li>
+                            <li>
+                        </ul>
+                    </div>
+                    <div>
                         <a href="#">MARKETPLACE</a>
                         <i class="fi fi-rr-angle-small-down"></i>
-                    </li>
-                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">Place an Obituary</a>
+                            </li>
+                            <li>
+                                <a href="#">Place a Real Estate Ad</a>
+                            </li>
+                            <li>
+                                <a href="#">Lottery</a>
+                            </li>                       
+                        </ul>
+                    </div>
+                    <div>
                         <a href="#">CONTACT US</a>
                         <i class="fi fi-rr-angle-small-down"></i>
-                    </li>
-                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">Digital Access FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Join our Team</a>
+                            </li>
+                            <li>
+                                <a href="#">Special Sections</a>
+                            </li>    
+                            <li>
+                                <a href="#">Sponsor a Group</a>
+                            </li>   
+                            <li>
+                                <a href="#">Get Sponsored Access</a>
+                            </li>   
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li> 
+                            <li>
+                                <a href="#">Accessibility</a>
+                            </li>                        
+                        </ul>
+                    </div>
+                    <div>
                         <a href="#">ADVERTISE WITH US</a>
                         <i class="fi fi-rr-angle-small-down"></i>
-                    </li>
-                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">Network Advertising</a>
+                            </li>
+                            <li>
+                                <a href="#">Daily Ads</a>
+                            </li>
+                            <li>
+                                <a href="#">Place a Legal Notice</a>
+                            </li>    
+                            <li>
+                                <a href="#">Public Notices</a>
+                            </li>   
+                            <li>
+                                <a href="#">Best Venus Area Employers</a>
+                            </li>   
+                            <li>
+                                <a href="#">Monster.com</a>
+                            </li>                       
+                        </ul>
+                    </div>
+                    <div>
                         <a href="#">SUBSCRIBE</a>
                         <i class="fi fi-rr-angle-small-down"></i>
-                    </li>
-                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">Member Services</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Subscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#">Store</a>
+                            </li>    
+                            <li>
+                                <a href="#">Archive Search</a>
+                            </li>   
+                            <li>
+                                <a href="#">Reprints</a>
+                            </li>                        
+                        </ul>
+                    </div>
+                    <div class = "social_icons">
                         <a>FOLLOW US</a>
-                    </li>
-                    <li id = "icon_buttons" class = "no_border_top">
-                        <i class="fi fi-brands-facebook"></i>
-                        <i class="fi fi-brands-twitter"></i>
-                        <i class="fi fi-brands-instagram"></i>
-                    </li>
-                    <li id = "venus_button_container" class = "no_border_top">
+                        <div id = "icon_buttons" class = "no_border_top">
+                            <i class="fi fi-brands-facebook"></i>
+                            <i class="fi fi-brands-twitter"></i>
+                            <i class="fi fi-brands-instagram"></i>
+                        </div>
                         <a href="#" id="subscribe_button" class = "venus_button">SUBSCRIBE NOW</a>
-                    </li>
-                </ul>
+                    </div>
+                </nav>
                 <ul class = "venus_legal">
                     <li>
                         <a href="#">Terms of Use</a>
