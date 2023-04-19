@@ -174,8 +174,8 @@ $border-color: rgb(215, 214, 210);
 
 .listing{
     display: grid;
-    gap: 1em;
-    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5em;
+    grid-auto-flow: row;
 }
 
 .hidden{
@@ -434,7 +434,7 @@ $border-color: rgb(215, 214, 210);
 }
 
 .shadow{
-    background: rgba(96,96,96,0.6);
+    background-color: rgba(96,96,96,0.6) !important;
 }
 
 .noscroll{
@@ -1045,6 +1045,135 @@ $border-color: rgb(215, 214, 210);
                     
                     img{
                         max-height: 170px;
+                    }
+                }
+            }
+        }
+
+        &.photos{
+            gap: 0.5em;
+            grid-template-areas: 
+                "theme"
+                "relevant"
+                "more"
+                "even_more"
+            ;
+            grid-template-columns: 1fr;
+            
+            @include respond_large(){
+                grid-template-areas: 
+                    "theme theme"
+                    "relevant more"
+                    "even_more even_more"
+                ;
+                grid-template-columns: 1fr 1fr;
+                
+            }
+
+            article{
+                grid-template-areas: 
+                    "img"
+                    "title"
+                    "content"
+                ;
+                grid-template-columns: 1fr;
+                
+                @include respond_medium(){
+                    grid-template-areas: 
+                        "img title"
+                        "img content"
+                    ;  
+                    grid-template-columns: 2fr 1fr;
+                }
+            }
+
+            ul{
+                li{
+                    figure{
+                        display: grid;
+                        gap: 0.5em;
+                        grid-template-columns: auto 1fr;
+                        max-height: 100%;
+                        padding: 0.5em 0;
+                        border-bottom: $border-color solid 0.5px;
+    
+                        img{
+                            grid-area: 1 / 1 / 2 / 2;
+                            max-height: 150px;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+    
+                        figcaption{
+                            @include title(0.8em);
+                            grid-area: 1 / 2 / 2 / 3;
+                            justify-self: left;
+    
+                            @include link-hover(black, $primary, none)
+                        }
+                    }
+                }
+            }
+
+            .more_photos{
+                grid-area: even_more;
+                
+                ul{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.5em;
+
+                    @include respond_large(){
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    img{
+                        max-height: 75px;
+                        @include respond_large(){
+                            max-height: 150px;
+                        }
+                    }
+                }
+            }
+
+            #more_photos_button{
+                grid-area: even_more;
+                width: 100%;
+                display: grid;  
+                columns: 1;
+                grid-template-areas: 
+                    "btn"
+                    "label"
+                ;
+                grid-template-columns: 20px auto;
+                grid-template-columns: 1fr;
+                cursor: pointer;
+
+                #more_photos{
+                    grid-area: btn;
+                    width: 35px;
+                    height: 35px;
+                    background-color: $cute-bg;
+                    place-self: center;
+    
+                    -webkit-transform: translateY(17.5px) rotate(-45deg);
+                    -ms-transform: translateY(17.5px) rotate(-45deg);
+                    transform: translateY(17.5px) rotate(-45deg);
+    
+                    border-bottom: $border-color solid 0.5px;
+                    border-left: $border-color solid 0.5px;
+                    border-top: none;
+                    border-right: none;
+                }
+
+                span{
+                    @include title(0.8em){
+                        grid-area: label;
+                        border-top: $border-color solid 0.5px;
+                        width: 100%;
+                        place-self: center;
+                        text-align: center;
+                        padding: calc(30px + 0.5em) 0 0 0;
                     }
                 }
             }

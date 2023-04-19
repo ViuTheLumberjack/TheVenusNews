@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("cookies").addEventListener("click", openCookiePolicy);
 	document.getElementById("menu").addEventListener("click", openMenu);
 	document.getElementById("search").addEventListener("click", openSearchBar);
+	document.getElementById("more_photos_button").addEventListener("click", openMorePhotos);
 
 	document.getElementById("accordion_like").childNodes.forEach(function(element){
 		// check if element has an i tag
@@ -14,11 +15,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				element.addEventListener("click", showAccordion);
 			}
 		});
-
-		
-		
 	});
 });
+
+function openMorePhotos(){
+	var btn = document.getElementById("more_photos_button");
+	var photo = document.getElementById("photos");
+	btn.classList.add('hidden');
+	photo.classList.remove('hidden');
+}
 
 function showAccordion(){
 	var itag = this as HTMLElement;
