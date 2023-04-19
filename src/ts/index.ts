@@ -22,7 +22,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function showAccordion(){
 	var itag = this as HTMLElement;
-	var ul = itag.childNodes[5] as HTMLElement;
+	var ul = null;
+	for(var i = 0; i < itag.childNodes.length; i++){
+		if(itag.childNodes[i].nodeName == "UL"){
+			ul = itag.childNodes[i] as HTMLElement;
+			break;
+		}
+	}
 
 	ul.style.display = "block";
 
@@ -32,7 +38,13 @@ function showAccordion(){
 
 function closeAccordion(){
 	var itag = this as HTMLElement;
-	var ul = itag.childNodes[5] as HTMLElement;
+	var ul = null;
+	for(var i = 0; i < itag.childNodes.length; i++){
+		if(itag.childNodes[i].nodeName == "UL"){
+			ul = itag.childNodes[i] as HTMLElement;
+			break;
+		}
+	}
 
 	ul.style.display = "none";
 

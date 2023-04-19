@@ -1228,6 +1228,8 @@ footer {
                     grid-area: 3 / 1 / 4 / 2;
                     width: 100%;
 
+                    @include link-hover(white, white, underline);
+
                     @include respond_small(){
                         grid-area: 3 / 1 / 4 / 3;
                     }
