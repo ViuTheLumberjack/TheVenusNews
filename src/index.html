@@ -15,11 +15,11 @@
         <title>The Venus News</title>
     </head>
     <body>
-        <header id = "site_header">
-            <div class="venus_header">
+        <header id = "header_wrapper">
+            <div id = "site_header" class="venus_header">
                 <div class = "always_on_header">
                     <div id = "menu_top_left" class = "nav_link">
-                        <div>
+                        <div id = "menu">
                             <i id = "open_menu_button" class="fi fi-br-menu-burger icon"></i>
                             <span>All Sections</span>
                         </div>
@@ -46,7 +46,9 @@
                             </button>
                         </div>
                     </div>
-                    <i class="fi fi-rr-search icon"></i>
+                    <div id = "search" class = "search_box">
+                        <i class="fi fi-rr-search icon"></i>
+                    </div>
                 </div>
                 <div id = "navbar" class = "navigation_index">
                     <nav>
@@ -90,6 +92,10 @@
                             <span>e-Edition</span>
                         </a>
                     </nav>
+                </div>
+                <div id = "searchbar" class = "searchbar hidden">
+                    <input type = "text" placeholder = "Search">
+                    <button id = "search_button" class = "venus_button"> SEARCH </button>
                 </div>
             </div>
         </header>
@@ -606,22 +612,24 @@
                     </li>
                 </ol>
             </section>
+        </div>
+        <div id = "cookies_wrapper">
             <div id = "cookies">
                 <i class="fi fi-rr-cookie"></i>
-                <div id = cookie_policy class = "show_left hidden">
-                    <p>
-                        We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
-                    </p>
-                    <button class = "venus_button">
-                        OK
-                    </button>
-                </div>
+            </div>
+            <div id = cookie_policy class = "show_right hidden">
+                <p>
+                    We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+                </p>
+                <button id = "cookie_button" class = "venus_button">
+                    OK
+                </button>
             </div>
         </div>
         <footer id = "site_footer">
             <div class = "venus_footer">
                 <img src="public/img/The_Venus_News_logo.png" alt="Venus Logo" class="venus_logo">
-                <nav class = "site_sections">
+                <nav id = "accordion_like" class = "site_sections">
                     <div>
                         <a href="#">NEWS ALERTS</a>
                         <i class="fi fi-rr-angle-small-down"></i>
