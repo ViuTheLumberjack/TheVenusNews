@@ -434,7 +434,12 @@ $border-color: rgb(215, 214, 210);
 }
 
 .shadow{
-    background-color: rgba(96,96,96,0.6) !important;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
 }
 
 .noscroll{
